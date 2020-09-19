@@ -42,8 +42,8 @@ def decrypt_data(client, ciphertext):
 
 
 # limited permissions.  hidden in env variables, typically injected 
-role_id = os.environ.get("ROLEID")
-secret_id = os.environ.get("VAULTSECRET")
+role_id = os.environ.get("PYROLEID")
+secret_id = os.environ.get("PYVAULTSECRET")
 
 client = hvac.Client(url="http://localhost:8200")
 try:
