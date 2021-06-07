@@ -48,7 +48,12 @@ secret_id = os.environ.get("PYVAULTSECRET")
 client = hvac.Client(url="http://localhost:8200")
 try:
     # get the token for authentication
-    client.auth_approle(role_id, secret_id)
+    #client.auth_approle(role_id, secret_id)
+
+    client.auth.approle.login(
+        role_id=role_id,
+        secret_id=secret_id
+    )
 except:
     # failed to get a token
     print("Error on token auth")
